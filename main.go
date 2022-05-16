@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+
+	"github.com/the-go-getter/go-microservices/rectangle"
 )
 
 func main() {
@@ -13,5 +15,6 @@ func main() {
 	fmt.Println(employeeIds)
 	// fmt.Println(quote.Go())
 	// fmt.Println(x, y, z, name)
+	fmt.Println(rectangle.Area(2, 3))
 
 }
