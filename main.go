@@ -2,8 +2,7 @@ package main
 
 import (
 	"fmt"
-
-	"github.com/the-go-getter/go-microservices/rectangle"
+	"net/http"
 )
 
 func main() {
@@ -15,6 +14,10 @@ func main() {
 	fmt.Println(employeeIds)
 	// fmt.Println(quote.Go())
 	// fmt.Println(x, y, z, name)
-	fmt.Println(rectangle.Area(2, 3))
+	// fmt.Println(rectangle.Area(2, 3))
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintf(w, "Hello, you've requested: %s\n", r.URL.Path)
+	})
 
+	http.ListenAndServe(":80", nil)
 }
